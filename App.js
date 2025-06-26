@@ -5,15 +5,17 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import SignUp from './src/pages/SignUp';
 import Login from './src/pages/Login';
-import Landing from './src/pages/Landing';
+import GetStarted from './src/pages/GetStarted';
 import Dashboard from './src/pages/Dashboard';
+import Home from './src/pages/Home';
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="Landing" component={Landing} />
+      <Stack.Navigator screenOptions={{ headerShown: true }}>
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="GetStarted" component={GetStarted} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="SignUp" component={SignUp} />
         <Stack.Screen name="Dashboard" component={Dashboard} />

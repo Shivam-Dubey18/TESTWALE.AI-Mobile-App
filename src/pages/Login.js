@@ -26,7 +26,7 @@ export default function Login() {
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      <Text style={styles.logo} onPress={() => navigation.navigate('Landing')}>TESTWALE.AI</Text>
+      <Text style={styles.logo} onPress={() => navigation.navigate('Home')}>TESTWALE.AI</Text>
       <View style={styles.formContainer}>
         <Text style={styles.title}>Login</Text>
         {success ? <Text style={styles.success}>{success}</Text> : null}

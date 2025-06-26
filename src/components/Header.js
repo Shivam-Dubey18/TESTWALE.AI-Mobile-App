@@ -1,6 +1,5 @@
-"use client";
 import React, { useState } from "react";
-import { View, Text, TouchableOpacity, StyleSheet, Modal, Pressable } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, Modal, Pressable, Linking } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 const Header = () => {
@@ -10,8 +9,8 @@ const Header = () => {
   return (
     <View style={styles.navbar}>
       {/* Logo */}
-      <TouchableOpacity onPress={() => navigation.navigate('Landing')}>
-        <Text style={styles.logo} onPress={() => navigation.navigate('Landing')}>TESTWALE.AI</Text>
+      <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+        <Text style={styles.logo}>TESTWALE.AI</Text>
       </TouchableOpacity>
 
       
@@ -31,7 +30,7 @@ const Header = () => {
       >
         <Pressable style={styles.modalOverlay} onPress={() => setIsOpen(false)}>
           <View style={styles.menuModal}>
-            <TouchableOpacity style={styles.menuItem} onPress={() => { setIsOpen(false); navigation.navigate('Landing'); }}>
+            <TouchableOpacity style={styles.menuItem} onPress={() => { setIsOpen(false); navigation.navigate('Home'); }}>
               <Text style={styles.menuText}>Home</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.menuItem} onPress={() => { setIsOpen(false); navigation.navigate('Dashboard'); }}>
@@ -40,13 +39,13 @@ const Header = () => {
             <TouchableOpacity style={styles.menuItem} onPress={() => { setIsOpen(false); navigation.navigate('AboutUs'); }}>
               <Text style={styles.menuText}>About Us</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.menuButtonAction}>
-              <Text style={styles.menuButtonText}>Log Out</Text>
+            <TouchableOpacity style={styles.menuButtonAction} onPress={() => { setIsOpen(false); navigation.navigate('Login'); }}>
+              <Text style={styles.menuButtonText}>Log In</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.menuButtonAction}>
+            <TouchableOpacity style={styles.menuButtonAction} onPress={() => { setIsOpen(false); Linking.openURL("https://testwale.ai/Support");}}>
               <Text style={styles.menuButtonText}>Help</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.menuButtonAction}>
+            <TouchableOpacity style={styles.menuButtonAction} onPress={() => { setIsOpen(false); navigation.navigate(''); }}>
               <Text style={styles.menuButtonText}>Settings</Text>
             </TouchableOpacity>
           </View>

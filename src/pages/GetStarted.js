@@ -1,14 +1,15 @@
 import React from 'react';
 import { View, Text, Image, ScrollView, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import Header from '../components/Header';
 
-export default function Landing() {
+export default function GetStarted() {
   const navigation = useNavigation();
   const windowWidth = Dimensions.get('window').width;
 
   return (
     <View style={{ flex: 1, backgroundColor: '#F4F8FB' }}>
-      <Text style={styles.logo}>TESTWALE.AI</Text>
+      
       <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
         <Text style={styles.mainTitle}>
           Start Learning with our
